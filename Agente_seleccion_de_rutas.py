@@ -27,3 +27,30 @@ class AgenteSeleccionRutas:
                     nueva_utilidad = utilidad - self.entorno[nx][ny]
                     heapq.heappush(heap, (nueva_utilidad, (nx, ny), ruta + [(nx, ny)]))
         return [], 0
+    
+    def seleccionar_ruta(self):
+        ruta, utilidad = self.calcular_mejor_ruta()
+        if ruta:
+            print(f"🚀 Ruta seleccionada con utilidad {utilidad}:")
+            for paso in ruta:
+                print(f"📍 {paso}")
+                time.sleep(0.5)
+            print("🏁 Meta alcanzada!")
+        else:
+            print("❌ No se encontró una ruta viable.")
+
+# Definir el entorno con valores de recompensa
+entorno = [
+    [3, 1, 2, 5, 4],
+    [1, 1, 3, 1, 2],
+    [4, 3, 1, 2, 1],
+    [2, 2, 4, 1, 3],
+    [5, 1, 2, 3, 4]
+]
+
+inicio = (0, 0)
+meta = (4, 4)
+
+# Crear el agente y ejecutarlo
+agente = AgenteSeleccionRutas(entorno, inicio, meta)
+agente.seleccionar_ruta()
