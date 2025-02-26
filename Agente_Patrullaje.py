@@ -38,9 +38,3 @@ ruta_patrullaje = ["Punto A", "Punto B", "Punto C", "Punto D", "Punto E"]
 agente = Patrullero(ruta_patrullaje)
 agente.patrullar()
 
-# Definir una ruta de patrullaje
-ruta_patrullaje = ["Punto A", "Punto B", "Punto C", "Punto D", "Punto E"]
-
-# Crear el agente y ejecutarlo
-agente = Patrullero(ruta_patrullaje)
-agente.patrullar()
