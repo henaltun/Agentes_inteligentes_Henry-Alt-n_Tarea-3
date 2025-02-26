@@ -26,3 +26,29 @@ class AgenteNavegacion:
                     cola.append(((nx, ny), ruta + [(nx, ny)]))
                     visitados.add((nx, ny))
         return []
+    
+    def navegar(self):
+        ruta = self.buscar_ruta()
+        if ruta:
+            for paso in ruta:
+                print(f"🚀 Agente en {paso}")
+                time.sleep(0.5)
+            print("🎯 Meta alcanzada!")
+        else:
+            print("❌ No se encontró una ruta a la meta.")
+
+# Definir el laberinto (0 = camino, 1 = pared)
+laberinto = [
+    [0, 1, 0, 0, 0],
+    [0, 1, 0, 1, 0],
+    [0, 0, 0, 1, 0],
+    [0, 1, 1, 1, 0],
+    [0, 0, 0, 0, 0]
+]
+
+inicio = (0, 0)
+meta = (4, 4)
+
+# Crear el agente y ejecutarlo
+agente = AgenteNavegacion(laberinto, inicio, meta)
+agente.navegar()
