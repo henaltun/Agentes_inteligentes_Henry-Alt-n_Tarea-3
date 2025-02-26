@@ -31,9 +31,3 @@ class Patrullero:
             self.mover()
             time.sleep(0.5)
 
-# Definir una ruta de patrullaje
-ruta_patrullaje = ["Punto A", "Punto B", "Punto C", "Punto D", "Punto E"]
-
-# Crear el agente y ejecutarlo
-agente = Patrullero(ruta_patrullaje)
-agente.patrullar()
